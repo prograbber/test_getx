@@ -1,6 +1,7 @@
 # test_getx
 
-A new Flutter project.
+Flutter
+Getx 모듈을 사용해서 appbar를 유지한체 화면 전환 샘플
 
 ## Getting Started
 
