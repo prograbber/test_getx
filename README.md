@@ -4,17 +4,23 @@ Flutter
 Getx 모듈을 사용해서 appbar를 유지한체 화면 전환 샘플
 
 ```dart
-  enum TScreenType { A, B }
+enum TScreenType { A, B }
 
-  class MainScreenController extends GetxController {}
+class MainScreenController extends GetxController {
+  var currentScreen = TScreenType.A.obs;
+
+  void changeScreen(TScreenType screen) {
+    currentScreen.value = screen;
+  }
+}
 
   body: GetX<MainScreenController>()
 
-  class ScreenAController extends GetxController {
-    void goToScreenB() {
-      Get.find<MainScreenController>().changeScreen(TScreenType.B);
-    }
+class ScreenAController extends GetxController {
+  void goToScreenB() {
+    Get.find<MainScreenController>().changeScreen(TScreenType.B);
   }
+}
 ```
 
 ## Getting Started
